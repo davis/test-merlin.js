@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean": "rm bundle.js",
+    "prebuild": "npm run clean",
+    "build": "browserify index.js > bundle.js",
+    "start": "npm run build && open index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -11,5 +15,8 @@
   "dependencies": {
     "merlin.js": "^0.4.3",
     "superagent": "^1.2.0"
+  },
+  "devDependencies": {
+    "browserify": "^10.2.3"
   }
 }
